@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>JAGUAR XITERS - Premium Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* PREMIUM 4K THEME WITH HIGH-TECH TYPOGRAPHY */
+        :root {
+            --bg-card: rgba(10, 10, 18, 0.82);
+            --bg-panel: rgba(18, 18, 32, 0.75);
+            --stroke: rgba(255, 255, 255, 0.07);
+            --accent1: #00ff88; 
+            --accent2: #00e5ff; 
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --ok: #00ff88;
+            --warn: #ffaa00;
+            --err: #ff0055;
+            --card-border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: none !important; 
+        }
+
+        /* ABSOLUTE SCROLLBAR REMOVAL EVERYWHERE */
+        html, body, .container, .tab-content, .console, .combo-menu, .tabs {
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+        ::-webkit-scrollbar {
+            display: none !important; 
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text-main);
+            /* Crystal clear background visibility without shadows */
+            background: url('https://cdn.discordapp.com/attachments/1510477809645125735/1510483067058393139/thumb-1920-542198.png?ex=6a1cfa7a&is=6a1ba8fa&hm=bfbf32a217357bbdad39e6ba7c007eeb8b4d97485bedf7ab8e2b371e6a02d14e') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        /* PREMIUM CLASSIC CURSOR */
+        #custom-cursor {
+            width: 12px;
+            height: 12px;
+            position: fixed;
+            pointer-events: none;
+            z-index: 100000;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+        #custom-cursor::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 2px; height: 16px;
+            background: var(--accent2);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px var(--accent2);
+        }
+        #custom-cursor::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 16px; height: 2px;
+            background: var(--accent2);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px var(--accent2);
+        }
+        #custom-cursor-dot {
+            position: fixed;
+            width: 4px; height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100010;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-hover {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.2) !important;
+        }
+        .cursor-hover::before, .cursor-hover::after {
+            background: var(--accent1) !important;
+            box-shadow: 0 0 10px var(--accent1) !important;
+        }
+
+        /* CONTAINER MODIFIED: SHIFTED COMPLETELY TO THE LEFT */
+        .container {
+            width: 100%;
+            max-width: 460px;
+            margin: 40px 0 40px 40px; /* Centered margin auto removed, fixed left layout set */
+            padding: 12px;
+        }
+
+        /* Premium Blurred Glass Container */
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--stroke);
+            border-radius: var(--card-border-radius);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+        }
+
+        .header {
+            padding: 32px 24px 16px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent1);
+            box-shadow: 0 0 12px var(--accent1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 10px;
+            margin: 8px 0 0;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Modernized Status Bar */
+        .status {
+            margin: 20px 24px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: rgba(4, 4, 8, 0.6);
+            border-left: 3px solid var(--accent1);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .status .online { color: var(--ok); font-weight: 600; }
+        .status .err { color: var(--err); font-weight: 600; }
+
+        /* Row Layout */
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-top: 1px solid var(--stroke);
+            border-bottom: 1px solid var(--stroke);
+            background: rgba(18, 18, 32, 0.2);
+        }
+
+        .row label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Segmented Buttons */
+        .seg {
+            display: flex;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--stroke);
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        .seg button {
+            appearance: none;
+            border: none;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--text-muted);
+            background: transparent;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .seg button.active {
+            background: var(--bg-panel);
+            color: var(--accent1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* High-Tech Grid Tabs */
+        .tabs {
+            display: flex;
+            width: 100%;
+            background: rgba(4, 4, 8, 0.4);
+            border-bottom: 1px solid var(--stroke);
+            overflow-x: auto;
+        }
+
+        .tabs button {
+            flex: 1;
+            min-width: 85px;
+            padding: 18px 10px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .tabs button:hover { color: #fff; }
+
+        .tabs button.active {
+            color: var(--accent1);
+            background: rgba(18, 18, 32, 0.3);
+        }
+        .tabs button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 2px;
+            background: var(--accent1);
+            box-shadow: 0 -2px 10px var(--accent1);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 22px 24px;
+            animation: techSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tab-content.active { display: block; }
+
+        @keyframes techSlide {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Premium Panels */
+        .panel {
+            border: 1px solid var(--stroke);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+            background: var(--bg-panel);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: border-color 0.2s ease;
+        }
+
+        .panel:hover { border-color: rgba(255,255,255,0.12); }
+
+        .panel .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .title { font-size: 14px; font-weight: 600; color: #ffffff; letter-spacing: 0.3px; }
+        .hint { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+        /* Futuristic Action Buttons */
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid var(--accent1);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 11px;
+            background: rgba(0, 255, 136, 0.05);
+            color: var(--accent1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            min-width: 75px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--accent1);
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--stroke);
+        }
+
+        .btn.ghost:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.04);
+        }
+
+        /* Custom Combo Boxes */
+        .combo {
+            position: relative;
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .combo-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 11px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--stroke);
+            background: rgba(4, 4, 8, 0.5);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .combo-trigger svg {
+            width: 14px; height: 14px;
+            color: var(--accent2);
+            transition: transform 0.2s ease;
+        }
+
+        .combo.open .combo-trigger svg { transform: rotate(180deg); }
+
+        .combo-menu {
+            position: absolute;
+            left: 0; right: 0;
+            top: calc(100% + 6px);
+            z-index: 20;
+            display: none;
+            background: #0b0b14;
+            border: 1px solid var(--stroke);
+            border-radius: 8px;
+            max-height: 220px;
+            overflow-y: auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+        }
+
+        .combo.open .combo-menu { display: block; }
+
+        .combo-option {
+            width: 100%;
+            text-align: left;
+            padding: 11px 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.01);
+            transition: all 0.15s ease;
+        }
+
+        .combo-option:hover { background: rgba(255,255,255,0.05); color: #fff; }
+
+        .combo-option.selected {
+            background: rgba(0, 229, 255, 0.08);
+            color: var(--accent2);
+            border-left: 3px solid var(--accent2);
+        }
+
+        /* Tactical System Log Console */
+        .console-wrap {
+            background: rgba(4, 4, 8, 0.88);
+            border: 1px solid var(--stroke);
+            border-radius: 12px;
+            margin: 10px 24px 24px;
+            overflow: hidden;
+        }
+
+        .console-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: rgba(12, 12, 24, 0.4);
+            border-bottom: 1px solid var(--stroke);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+        }
+
+        .console-clear {
+            background: transparent;
+            border: 1px solid var(--stroke);
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .console-clear:hover {
+            color: var(--err);
+            border-color: var(--err);
+            background: rgba(255, 0, 85, 0.08);
+        }
+
+        .console {
+            height: 160px;
+            overflow-y: auto;
+            padding: 14px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .line {
+            padding: 3px 6px;
+            margin-bottom: 3px;
+            border-radius: 4px;
+        }
+
+        .line.ok { color: var(--ok); background: rgba(0, 255, 136, 0.04); }
+        .line.warn { color: var(--warn); background: rgba(255, 170, 0, 0.04); }
+        .line.err { color: var(--err); background: rgba(255, 0, 85, 0.04); }
+
+        /* High-Tech Glass Blur Auth Overlay */
+        .auth-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 4, 8, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .auth-card {
+            background: var(--bg-card);
+            border: 1px solid var(--stroke);
+            border-radius: var(--card-border-radius);
+            padding: 40px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .auth-message {
+            margin: 24px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+        }
+
+        /* Mobile Layout Optimization */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto; /* Mobile devices par screen overflow na ho isiliye back to standard auto */
+                padding: 10px;
+            }
+        }
+
+        @media (min-height: 800px) and (min-width: 601px) {
+            body { overflow-y: hidden; }
+            .container { height: 100vh; overflow-y: auto; padding-bottom: 40px; }
+            .console-wrap { position: sticky; bottom: 10px; z-index: 10; }
+        }
+
+        @media (pointer: coarse) {
+            #custom-cursor, #custom-cursor-dot { display: none !important; }
+            * { cursor: auto !important; }
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    <div id="custom-cursor-dot"></div>
+
+    <div id="auth-overlay" class="auth-overlay" style="display: none;">
+        <div class="auth-card">
+            <div class="brand" style="margin-bottom: 20px;">
+                <div class="dot"></div>
+                <h2>JAGUAR PLAYZZ</h2>
+            </div>
+            <div class="auth-message" id="auth-message">Checking authentication...</div>
+            <button class="auth-btn" onclick="redirectToLogin()">Go to Login</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="header">
+                    <div class="brand"><div class="dot"></div><h2>JAGUAR PLAYZZ</h2></div>
+                    <h3>Advanced Engine</h3>
+                </div>
+
+                <div class="status">
+                    <div>Status: <span class="online">Online</span> • V3.3</div>
+                    <div>Connected to: Emulator</div>
+                </div>
+
+                <div class="row">
+                    <label>Architecture Engine</label>
+                    <div class="seg" id="mode-seg">
+                        <button type="button" class="active" data-type="32-Bit">32-Bit</button>
+                        <button type="button" data-type="64-Bit">64-Bit</button>
+                    </div>
+                </div>
+
+                <div class="tabs">
+                    <button class="active" data-tab="tab-aimbot">Aimbot</button>
+                    <button data-tab="tab-visuals">Visuals</button>
+                    <button data-tab="tab-sniper">Sniper</button>
+                    <button data-tab="tab-extras">Extras</button>
+                    <button data-tab="tab-settings">Settings</button>
+                </div>
+
+                <div class="tab-content active" id="tab-aimbot">
+                    <div class="panel">
+                        <div class="stack">
+                            <div class="title">Aimbot Mode</div>
+                            <div class="hint">Select Injection Protocol</div>
+                        </div>
+                        <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end; width:50%">
+                            <div class="combo" id="emu-combo">
+                                <button class="combo-trigger" id="emu-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                    <span id="emu-label">None</span>
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                </button>
+                                <div class="combo-menu" id="emu-menu" role="listbox">
+                                    <button class="combo-option" role="option" data-value="aimbotenable">Aimbot Head</button>
+                                    <button class="combo-option" role="option" data-value="aimDrag">Aimbot AI</button>
+                                    <button class="combo-option" role="option" data-value="aimDragPro">Aimbot Drag Pro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Aimbot Switch</div><div class="hint">Toggle Master Switch</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" id="aimbot-on-btn" data-cmd="aimbotheadon">ON</button>
+                            <button class="btn ghost" id="aimbot-off-btn" data-cmd="aimbotheadoff">OFF</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">No Recoil</div><div class="hint">Reduces Weapons Recoil by 99.999%</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="norecoilon">On</button>
+                            <button class="btn ghost" data-cmd="norecoiloff">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Scope Tracking 2X</div><div class="hint">Tracks Enemy on Scope Weapons</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="scopetracking2x">On</button>
+                            <button class="btn ghost" data-cmd="scopetrackingoff2x">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Scope Tracking 4X</div><div class="hint">Tracks Enemy on Scope Weapons</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="scopetracking4x">On</button>
+                            <button class="btn ghost" data-cmd="scopetrackingoff4x">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Female to Male</div><div class="hint">Converts all Female to Male</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="f2mon">On</button>
+                            <button class="btn ghost" data-cmd="f2moff">Off</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-visuals">
+                    <div class="panel">
+                        <div class="stack"><div class="title">Chams Start</div><div class="hint">Enable This to use any chams below</div></div>
+                        <button class="btn" data-cmd="chamsstart">Inject</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Chams Menu V1</div><div class="hint">Modern Chams Menu UI for enemy location</div></div>
+                        <button class="btn" data-cmd="chamsmenunew">Inject</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Chams Menu V2</div><div class="hint">Old Chams Menu UI for enemy location</div></div>
+                        <button class="btn" data-cmd="chamsmenuold">Inject</button>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Chams 3D</div><div class="hint">Make Enemies Visible Through Walls</div></div>
+                        <button class="btn" data-cmd="chams3d">Inject</button>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">HDR Map</div><div class="hint">Make game Quality HD+</div></div>
+                        <button class="btn" data-cmd="chamshdr">Inject</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-sniper">
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Aim ⚠️</div><div class="hint">Turns Sniper to AR Weapon</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="sniperaimon">On</button>
+                            <button class="btn ghost" data-cmd="sniperaimoff">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Switch ⚠️</div><div class="hint">Reduce Sniper Switch Time</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="sniperswitchon">On</button>
+                            <button class="btn ghost" data-cmd="sniperswitchoff">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Location [AWMY]</div><div class="hint">Shows Sniper and Ammo Location</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="awmylocationon">On</button>
+                            <button class="btn ghost" data-cmd="awmylocationoff">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Location [M82B]</div><div class="hint">Shows Sniper and Ammo Location</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="m82blocationon">On</button>
+                            <button class="btn ghost" data-cmd="m82blocationoff">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Location [M24]</div><div class="hint">Shows Sniper and Ammo Location</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="m24locationon">On</button>
+                            <button class="btn ghost" data-cmd="m24locationoff">Off</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stack"><div class="title">Sniper Location [VSK]</div><div class="hint">Shows Sniper and Ammo Location</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="vsklocationon">On</button>
+                            <button class="btn ghost" data-cmd="vsklocationoff">Off</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-extras">
+                    <div class="panel">
+                        <div class="stack"><div class="title">Aim Fov [90]</div><div class="hint">Aim At Nearest Enemy within 90 Degree</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn" data-cmd="aimfovon">On</button>
+                            <button class="btn ghost" data-cmd="aimfovoff">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Wall Hack</div><div class="hint">Walk or Sprint Through Walls</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn ghost" data-cmd="wallload">Load</button>
+                            <button class="btn" data-cmd="wallon">On</button>
+                            <button class="btn ghost" data-cmd="walloff">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Speed Hack</div><div class="hint">Increase Movement Speed</div></div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn ghost" data-cmd="speedload">Load</button>
+                            <button class="btn" data-cmd="speedon">On</button>
+                            <button class="btn ghost" data-cmd="speedoff">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Reset Guest</div><div class="hint">Reset account data locally</div></div>
+                        <button class="btn ghost" data-cmd="resetguest">Reset</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-settings">
+                    <div class="panel" id="global-input-device-panel">
+                        <div class="stack">
+                            <div class="title">Input Device</div>
+                            <div class="hint">Switch bind detection mode</div>
+                        </div>
+                        <div class="seg" id="input-device-seg">
+                            <button type="button" class="active" data-type="keyboard">Keyboard</button>
+                            <button type="button" data-type="mouse">Mouse</button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack">
+                            <div class="title">Scan Aimbot Hotkey</div>
+                            <div class="hint">Bind trigger key</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:8px; justify-content:flex-end; width:50%">
+                            <div class="combo hotkey-combo" data-index="2">
+                                <button class="combo-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                    <span class="combo-label">None</span>
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                </button>
+                                <div class="combo-menu" role="listbox"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack">
+                            <div class="title">Aimbot Hotkey</div>
+                            <div class="hint">Bind a key to Change Mode</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:8px; justify-content:flex-end; width:50%">
+                            <div class="combo hotkey-combo" data-index="3">
+                                <button class="combo-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                    <span class="combo-label">None</span>
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                </button>
+                                <div class="combo-menu" role="listbox"></div>   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Clear Console</div><div class="hint">Remove previous operation logs</div></div>
+                        <button class="btn ghost" id="clear-log">Wipe</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Exit Application</div><div class="hint">Safely terminate process</div></div>
+                        <button class="btn ghost" data-cmd="exit">Terminate</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="stack"><div class="title">Restart Application</div><div class="hint">Re-initialize engine</div></div>
+                        <button class="btn" data-cmd="restart">Restart</button>
+                    </div>
+                </div>
+
+                <div class="console-wrap">
+                    <div class="console-head">
+                        <div style="display:flex; align-items:center; gap:8px; color: var(--accent1);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" />
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            System Logs
+                        </div>
+                        <button class="console-clear" id="console-clear" title="Clear Console">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Clear
+                        </button>
+                    </div>
+                    <div class="console" id="log"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Classic Crosshair Pointer Engine */
+        const cursorCross = document.getElementById('custom-cursor');
+        const cursorDot = document.getElementById('custom-cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorCross.style.left = e.clientX + 'px';
+            cursorCross.style.top = e.clientY + 'px';
+            
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        });
+
+        const interactiveSelectors = 'button, .combo-trigger, .combo-option, input';
+        document.querySelectorAll(interactiveSelectors).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorCross.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorCross.classList.remove('cursor-hover');
+            });
+        });
+
+        const $ = s => document.querySelector(s);
+        const $$ = s => Array.from(document.querySelectorAll(s));
+        const logEl = $('#log');
+        const authOverlay = $('#auth-overlay');
+        const authMessage = $('#auth-message');
+        const mainContent = $('#main-content');
+
+        /* INTEGRATED MASTER LOGIN LOGIC ARCHITECTURE */
+        function showAuthOverlay(message) {
+            authMessage.textContent = message;
+            authOverlay.style.display = 'flex';
+            mainContent.style.display = 'none';
+        }
+
+        function hideAuthOverlay() {
+            authOverlay.style.display = 'none';
+            mainContent.style.display = 'block';
+        }
+
+        function redirectToLogin() {
+            window.location.href = '/login';
+        }
+
+        async function checkSession() {
+            try {
+                const response = await fetch('/session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.active) {
+                    hideAuthOverlay();
+                    return true;
+                } else {
+                    showAuthOverlay('Session expired. Please login again.');
+                    return false;
+                }
+            } catch (error) {
+                showAuthOverlay('Authentication check failed. Please login.');
+                return false;
+            }
+        }
+
+        function log(text, cls) {
+            const line = document.createElement('div');
+            line.className = 'line' + (cls ? ' ' + cls : '');
+            const t = new Date().toLocaleTimeString(undefined, { hour12: false });
+            line.textContent = `[${t}] ${text}`;
+            logEl.appendChild(line);
+            logEl.scrollTop = logEl.scrollHeight;
+            while (logEl.children.length > 120) logEl.removeChild(logEl.firstChild);
+        }
+
+        function sendCommand(cmd, { quietNetworkError = true } = {}) {
+            checkSession().then(authenticated => {
+                if (!authenticated) {
+                    log('Authentication required. Please login.', 'err');
+                    return;
+                }
+
+                log(`Please Wait...`);
+                fetch(window.location.origin + '/', { method: 'POST', body: cmd })
+                    .then(r => r.text())
+                    .then((feedback) => {
+                        if (feedback && feedback.trim().length > 0) {
+                            let cl = '';
+                            if (/error|fail|unknown|not\s+found|invalid/i.test(feedback)) cl = 'err';
+                            else if (/disabled|off|clear/i.test(feedback)) cl = 'warn';
+                            else if (/enabled|saved|scan|success|ok/i.test(feedback)) cl = 'ok';
+                            log(feedback, cl);
+                        } else {
+                            if (cmd === 'aimbotheadon') log('Headshot Enabled : Head', 'ok');
+                            if (cmd === 'aimbotdragon') log('Headshot Enabled : Drag', 'ok');
+                            if (cmd === 'aimbotdragproon') log('Headshot Enabled : Drag Pro ', 'ok');
+                            if (cmd === 'norecoilon') log('No Recoil Enabled', 'ok');
+                            if (cmd === 'norecoiloff') log('No Recoil Disabled', 'warn');
+                            if (cmd === 'scopetracking2x') log('Scope Tracking 2X Enabled', 'ok');
+                            if (cmd === 'scopetrackingoff2x') log('Scope Tracking 2X Disabled', 'warn');
+                            if (cmd === 'scopetracking4x') log('Scope Tracking 4X Enabled', 'ok');
+                            if (cmd === 'scopetrackingoff4x') log('Scope Tracking 4X Disabled', 'warn');
+                        }
+                    })
+                    .catch(() => {
+                        if (!quietNetworkError) log('Network error while sending command', 'err');
+                        else log('No server connection detected', 'warn');
+                    });
+            });
+        }
+
+        function renderStatus(online, connectedTo, pid) {
+            const statusRoot = document.querySelector('.status');
+            if (!statusRoot) return;
+
+            const line1 = statusRoot.querySelector('div:nth-child(1)');
+            const span = line1 ? line1.querySelector('span') : null;
+            if (span) {
+                span.textContent = online ? 'Online' : 'Offline';
+                span.className = online ? 'online' : 'err';
+            }
+
+            const line2 = statusRoot.querySelector('div:nth-child(2)');
+            if (line2) {
+                if (online) line2.textContent = 'Connected to: ' + (connectedTo || 'HD-Player') + ' - PID: ' + (pid || 0);
+                else line2.textContent = 'Connected to: None';
+            }
+        }
+
+        function fetchStatus() {
+            return fetch(window.location.origin + '/status', { method: 'GET' })
+                .then(r => r.ok ? r.json() : Promise.reject())
+                .catch(() => {
+                    return fetch(window.location.origin + '/', { method: 'POST', body: 'getStatus' })
+                        .then(r => r.ok ? r.json() : Promise.reject());
+                });
+        }
+
+        /* LIVE SYNC: PERIODIC LOG VALIDATION AND INITIAL SESSION SCAN */
+        setInterval(() => {
+            checkSession().then(authenticated => {
+                if (authenticated) {
+                    fetchStatus()
+                        .then(data => renderStatus(data.online, data.connectedTo, data.pid))
+                        .catch(err => {
+                            console.error('Status fetch failed:', err);
+                            renderStatus(false, null, 0);
+                        });
+                }
+            });
+        }, 2500);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            checkSession().then(authenticated => {
+                if (authenticated) {
+                    fetchStatus()
+                        .then(data => renderStatus(data.online, data.connectedTo, data.pid))
+                        .catch(err => {
+                            console.error('Initial status fetch failed:', err);
+                            renderStatus(false, null, 0);
+                        });
+                }
+            });
+        });
+
+        $$('.tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                $$('.tabs button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                $$('.tab-content').forEach(t => t.classList.remove('active'));
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        let emulatorArch = '32-Bit';
+        function setEmulatorArch(arch) {
+            emulatorArch = arch;
+            $$('#mode-seg button').forEach(x => { x.classList.toggle('active', x.dataset.type === arch); });
+        }
+        $$('#mode-seg button').forEach(b => {
+            b.addEventListener('click', () => { const arch = b.dataset.type || '32-Bit'; if (arch !== emulatorArch) setEmulatorArch(arch); });
+        });
+        setEmulatorArch(emulatorArch);
+
+        function initCombo(comboRoot) {
+            const trigger = comboRoot.querySelector('.combo-trigger');
+            const menu = comboRoot.querySelector('.combo-menu');
+            let labelEl = comboRoot.querySelector('.combo-label') || comboRoot.querySelector('#emu-label');
+            const open = () => { document.querySelectorAll('.combo.open').forEach(c => { if (c !== comboRoot) c.classList.remove('open'); }); comboRoot.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); };
+            const close = () => { comboRoot.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); };
+            trigger.addEventListener('click', (e) => { e.stopPropagation(); comboRoot.classList.contains('open') ? close() : open(); });
+            menu.querySelectorAll('.combo-option').forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menu.querySelectorAll('.combo-option').forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    if (labelEl) labelEl.textContent = opt.textContent.trim();
+                    close();
+                    const parentTitle = comboRoot.closest('.panel')?.querySelector('.title')?.textContent?.trim();
+                    if (parentTitle === 'Aimbot Mode') {
+                        log(`Aimbot Mode >> ${opt.textContent.trim()}`, 'ok');
+                        if (typeof updateAimbotSwitchButtons === 'function') {
+                            setTimeout(updateAimbotSwitchButtons, 10);
+                        }
+                    }
+                });
+            });
+            document.addEventListener('click', (e) => { if (!comboRoot.contains(e.target)) close(); });
+        }
+        document.querySelectorAll('.combo:not(.hotkey-combo)').forEach(initCombo);
+
+        const aimbotOnBtn = document.getElementById('aimbot-on-btn');
+        const aimbotOffBtn = document.getElementById('aimbot-off-btn');
+        const emuCombo = document.getElementById('emu-combo');
+
+        const aimbotCommandMap = {
+            'aimbotenable': 'aimbothead',
+            'aimDrag': 'aimbotdrag',
+            'aimDragPro': 'aimbotdragpro',
+            'aimAI': 'aimbotai'
+        };
+
+        function updateAimbotSwitchButtons() {
+            const selectedOption = emuCombo.querySelector('.combo-option.selected');
+            if (selectedOption) {
+                const selectedValue = selectedOption.getAttribute('data-value');
+                const commandPrefix = aimbotCommandMap[selectedValue] || 'aimbothead';
+
+                aimbotOnBtn.setAttribute('data-cmd', commandPrefix + 'on');
+                aimbotOffBtn.setAttribute('data-cmd', commandPrefix + 'off');
+            }
+        }
+
+        updateAimbotSwitchButtons();
+
+        let inputDevice = 'keyboard';
+        function setInputDevice(next) {
+            inputDevice = next;
+            $$('#input-device-seg button').forEach(b => b.classList.toggle('active', b.dataset.type === inputDevice));
+            renderAllHotkeyMenus();
+        }
+        $$('#input-device-seg button').forEach(b => {
+            b.addEventListener('click', () => setInputDevice(b.dataset.type || 'keyboard'));
+        });
+        function makeKeyboardList() {
+            const out = ['None'];
+            const fkeys = Array.from({ length: 24 }, (_, i) => 'F' + (i + 1));
+            const letters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+            const nums = Array.from({ length: 10 }, (_, i) => i.toString());
+            const others = ['CTRL', 'ALT', 'SHIFT', 'TAB', 'ENTER', 'ESC', 'SPACE', 'BACKSPACE', 'INSERT', 'DELETE', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN', 'LEFT', 'RIGHT', 'UP', 'DOWN'];
+            [fkeys, letters, nums, others].forEach(group => group.forEach(k => out.push(k)));
+            return out;
+        }
+        function makeMouseOptions() {
+            return [
+                { value: 'None', label: 'None' },
+                { value: 'LBUTTON', label: 'Left Button' },
+                { value: 'RBUTTON', label: 'Right Button' },
+                { value: 'MBUTTON', centerLabel: 'Middle Button' },
+                { value: 'X1', label: 'Mouse Button 4 (X1)' },
+                { value: 'X2', label: 'Mouse Button 5 (X2)' }
+            ];
+        }
+
+        function renderHotkeyMenu(comboRoot) {
+            const trigger = comboRoot.querySelector('.combo-trigger');
+            const labelEl = comboRoot.querySelector('.combo-label');
+            const menu = comboRoot.querySelector('.combo-menu');
+            const index = comboRoot.getAttribute('data-index');
+
+            menu.innerHTML = '';
+            labelEl.textContent = 'None';
+
+            const open = () => { document.querySelectorAll('.combo.open').forEach(c => { if (c !== comboRoot) c.classList.remove('open'); }); comboRoot.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); };
+            const close = () => { comboRoot.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); };
+            trigger.onclick = (e) => { e.stopPropagation(); comboRoot.classList.contains('open') ? close() : open(); };
+            document.addEventListener('click', (e) => { if (!comboRoot.contains(e.target)) close(); });
+
+            if (inputDevice === 'keyboard') {
+                const items = makeKeyboardList();
+                items.forEach(val => {
+                    const btn = document.createElement('button');
+                    btn.className = 'combo-option' + (val === 'None' ? ' selected' : '');
+                    btn.setAttribute('role', 'option');
+                    btn.dataset.value = val;
+                    btn.textContent = val;
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        menu.querySelectorAll('.combo-option').forEach(o => o.classList.remove('selected'));
+                        btn.classList.add('selected');
+                        labelEl.textContent = val;
+                        close();
+                        if (val === 'None') {
+                            sendCommand(`clearHotkey:${index}`);
+                            log(`Cleared keyboard hotkey (id ${index})`, 'warn');
+                        } else {
+                            sendCommand(`setHotkey:${index}:${val}`);
+                            log(`Saved keyboard hotkey (id ${index}): ${val}`, 'ok');
+                        }
+                    });
+                    menu.appendChild(btn);
+                });
+            } else {
+                const items = makeMouseOptions();
+                items.forEach(({ value, label }) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'combo-option' + (value === 'None' ? ' selected' : '');
+                    btn.setAttribute('role', 'option');
+                    btn.dataset.value = value;
+                    btn.textContent = label;
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        menu.querySelectorAll('.combo-option').forEach(o => o.classList.remove('selected'));
+                        btn.classList.add('selected');
+                        labelEl.textContent = label;
+                        close();
+                        if (value === 'None') {
+                            sendCommand(`clearMouse:${index}`);
+                            log(`Cleared mouse bind (id ${index})`, 'warn');
+                        } else {
+                            sendCommand(`setMouse:${index}:${value}`);
+                            log(`Saved mouse bind (id ${index}): ${label}`, 'ok');
+                        }
+                    });
+                    menu.appendChild(btn);
+                });
+            }
+        }
+
+        function renderAllHotkeyMenus() {
+            $$('.hotkey-combo').forEach(renderHotkeyMenu);
+        }
+
+        setInputDevice('keyboard');
+        renderAllHotkeyMenus();
+
+        document.querySelectorAll('[data-cmd]').forEach(btn => {
+            btn.addEventListener('click', () => sendCommand(btn.getAttribute('data-cmd')));
+        });
+
+        ['clear-log', 'console-clear'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('click', () => { logEl.innerHTML = ''; }); });
+
+        log('Connected to JAGUAR SERVER', 'ok');
+    </script>
+</body>
+</html>
